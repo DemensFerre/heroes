@@ -43,10 +43,59 @@ html {
   height: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 .page {
   height: 100%;
-  font-family: "Archive";
+  font-family: "Exo";
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
 }
+
+.container {
+  max-width: 1960px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+.header {
+  margin-bottom: 40px;
+}
+
+.header__body {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+}
+
+.header__logo {
+  font-family: "Archive";
+  font-size: 28px;
+}
+
+/* HEADER */
+
+/* HEROES */
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card__image {
+  height: 400px;
+}
+
+.card__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* HEROES */
