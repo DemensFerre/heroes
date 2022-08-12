@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Archive";
+  src: url(./fonts/Archive-Regular.woff2) format("woff2"),
+    url(./fonts/Archive-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo";
+  src: url(./fonts/Exo2-Bold.woff2) format("woff2"),
+    url(./fonts/Exo2-Bold.woff) format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo";
+  src: url(./fonts/Exo2-Medium.woff2) format("woff2"),
+    url(./fonts/Exo2-Medium.woff) format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Exo";
+  src: url(./fonts/Exo2-Regular.woff2) format("woff2"),
+    url(./fonts/Exo2-Regular.woff) format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+.page {
+  height: 100%;
+  font-family: "Archive";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+}
