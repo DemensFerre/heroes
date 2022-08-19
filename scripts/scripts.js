@@ -1,9 +1,6 @@
-// todo: использовать bootstrap в этом проекте
-// todo: сделать эффект 3D карточки
-
 const heroesWrapper = document.querySelector(".heroes .wrapper");
 
-const getHeroes = async () => {
+const start = async () => {
   const response = await fetch("./dbHeroes.json");
   const data = await response.json();
   renderCard(data);
@@ -31,7 +28,7 @@ const renderCard = (data) => {
           <span class="card-text__title">Статус</span>
           <span class="card-text__info">${item.status}</span>
         </p>
-        <a href="#" class="card__btn btn">Узнать больше</a>
+        <a href="#" class="card__btn card__btn_front btn">Узнать больше</a>
       </div>
       <div class="card-back">
         <h5 class="card-title">${item.name}</h5>
@@ -71,24 +68,30 @@ const renderCard = (data) => {
             item.movies ? item.movies.join(" | ") : "ничего не найдено"
           }</span>
         </p>
-        <a href="#" class="card__btn btn">Вернуться обратно</a>
+        <a href="#" class="card__btn card__btn_back btn">Вернуться обратно</a>
       </div>
     </div>
     `;
-
-    console.log();
 
     heroesWrapper.insertAdjacentHTML("beforeend", cardTemplate);
   }
 };
 
 const cardFlip = () => {
+  const allCard = heroesWrapper.querySelectorAll(".card");
   heroesWrapper.addEventListener("click", (e) => {
-    if (e.target.closest(".card__btn")) {
-      e.preventDefault();
-      e.target.closest(".card").classList.toggle("card_active");
+    e.preventDefault();
+    if (e.target.closest(".card__btn_front")) {
+      for (let card of allCard) {
+        card.classList.remove("card_active");
+      }
+      e.target.closest(".card").classList.add("card_active");
+    }
+
+    if (e.target.closest(".card__btn_back")) {
+      e.target.closest(".card").classList.remove("card_active");
     }
   });
 };
 
-getHeroes();
+start();
