@@ -106,6 +106,10 @@ img {
   perspective: 5000px;
 }
 
+.card_hide {
+  display: none;
+}
+
 .card-body,
 .card-back {
   position: absolute;
